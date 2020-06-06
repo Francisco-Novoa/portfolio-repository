@@ -1,0 +1,84 @@
+body{
+    background-color: green;}
+ button{
+     display: inline-block; }
+     
+#card{
+    width: 64px;
+    height: 89px;
+    background-color: white;
+    padding: 3px;
+    font-weight: bolder;
+    margin: 2px;
+    display: inline-block;
+}
+#top{
+    height: 20%;
+}
+#middle{
+    height: 60%;
+    line-height: 294%;
+    text-align: center;
+}
+#bottom{
+    vertical-align: bottom;
+    text-align: right;
+    transform: rotate(180deg) scaleX(-1);
+}/* diamond format */
+.diamond #top::before{
+    color: red;
+    content: "♦";
+}
+.diamond #bottom::after{
+    color: red;
+    content: "♦";
+}/* heart format */
+
+
+.heart #top::before{
+    color: red;
+    content: "♥";
+}
+.heart #bottom::after{
+    color: red;
+    content: "♥";
+
+
+}/* spade format */
+
+
+.spade #top::before{
+    content: "♠";
+}
+.spade #bottom::after{
+    content: "♠";
+
+
+}/* club format */
+.club #top::before{
+    content: "♣";
+}
+.club #bottom::after{
+    content: "♣";
+}
+
+.swaped1{
+    border-width: 3px;
+    border-style: solid;
+    border-color: red;
+}
+.swaped2{
+    border-width: 3px;
+    border-style: solid;
+    border-color: yellow;
+}
+
+.swaped3{
+    border-width: 3px;
+    border-style: solid;
+    border-color: blue;
+}
+
+.separator{
+    height: 33px;
+}

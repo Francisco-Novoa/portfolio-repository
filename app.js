@@ -14,6 +14,16 @@ const app = express()
 //allows to use content from more than one source usefull for the separation of backend and front end
 const cors = require("cors")
 
+
+
+
+// here go the router imports
+
+const usersRouter = require("./controllers/users")
+const loginRouter = require ("./controllers/login")
+
+
+
 //calls my custom console.log functions
 const { info } = require("./utils/logger")
 
@@ -25,6 +35,9 @@ const { errorHandler } = require("./utils/errorHandler")
 
 //imports the unknown endpoint middleware
 const { unknownEndpoint } = require("./utils/unknownEndPoint")
+
+
+
 
 //calls the ODM mongoose
 const mongoose = require("mongoose")
@@ -44,14 +57,16 @@ const connection = async function () {
     } catch (e) {
         error("error connecting to MongoDB", e.message)
     }
-}
-connection()
+}()
 
 //actually uses cors
 app.use(cors())
 
 //middleware made to serve static files autonomously in the file system, addon for express
-app.use(express.static("build"))
+app.use('/cardsorter', express.static("./proyects/cardsorter"));
+app.use('/tictactoe', express.static("./proyects/tictactoe"));
+
+
 
 //middleware that parses the body of the requests.
 //from here onwards the  request object is accesible
@@ -61,7 +76,8 @@ app.use(express.json())
 app.use(requestLogger)
 
 //here go the controllers
-
+app.use("/api/users/", usersRouter)
+app.use("/api/login", loginRouter)
 
 //here went the controllers from here onward the request
 //object has already been handled
