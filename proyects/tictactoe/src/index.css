@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+}
+
+#selection{
+    background-color: darkgray;
+    height: 500px;
+    width: 750px;
+    display: block;
+    margin:auto;
+    text-align: center;
+    color:lavender;
+    margin-top: 75px;
+    padding-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 43px;
+    color: lavender;
+}
+
+#selection  div {
+    height:65px;
+    margin-top: 25px;
+    background-color: darkgray;
+}
+
+input{
+    text-align: center;
+    border: black 2px solid;
+}
+
+#game{
+    margin-top: 25px; 
+}
+
+#game div div{
+    padding-top:50px;
+    height: 200px !important;
+    width: 200px !important;
+}
+
+@keyframes flash {
+    from,
+    50%,
+    to {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+      
+    }
+}
+
+#title{
+    color:royalblue;
+    font-size: 45px;
+    font-weight: 800;
+    animation-name: flash;
+    animation-duration: 4s;
+    text-decoration: underline;
+}
+
+.square{
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    padding-bottom: 25px;
+}
