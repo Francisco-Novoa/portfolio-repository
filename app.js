@@ -62,10 +62,11 @@ const connection = async function () {
 //actually uses cors
 app.use(cors())
 
-//middleware made to serve static files autonomously in the file system, addon for express
+//middleware made to serve static files autonomously in the file system
 app.use('/cardsorter', express.static("./proyects/cardsorter"));
 app.use('/tictactoe', express.static("./proyects/tictactoe"));
-
+app.use('/musicplayer', express.static("./proyects/musicplayer"));
+app.use('/ghibliblog', express.static("./proyects/ghibliblog"));
 
 
 //middleware that parses the body of the requests.
