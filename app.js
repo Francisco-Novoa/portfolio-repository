@@ -21,7 +21,7 @@ const cors = require("cors")
 
 const usersRouter = require("./controllers/users")
 const loginRouter = require ("./controllers/login")
-
+const emailRouter = require("./controllers/email")
 
 
 //calls my custom console.log functions
@@ -35,8 +35,6 @@ const { errorHandler } = require("./utils/errorHandler")
 
 //imports the unknown endpoint middleware
 const { unknownEndpoint } = require("./utils/unknownEndPoint")
-
-
 
 
 //calls the ODM mongoose
@@ -79,6 +77,7 @@ app.use(requestLogger)
 //here go the controllers
 app.use("/api/users/", usersRouter)
 app.use("/api/login", loginRouter)
+app.use("/email", emailRouter)
 
 //here went the controllers from here onward the request
 //object has already been handled
