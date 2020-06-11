@@ -1,10 +1,14 @@
 const config = require("./config")
-const mailjet = require ('node-mailjet')
-.connect(config.MAILJET0, config.MAILJET1)
 
-function SendEmail ({sender,subject,body}){
+const mailjet = require ('node-mailjet')
+.connect(`${config.MAILJET0}`, `${config.MAILJET1}`)
+
+
+
+function SendEmail (sender,subject,body){
   const request = mailjet
-  .post("send", {'version': 'v3.1'})
+  .post("send", {'version': 'v3.1'}, )
+  
   .request({
     "Messages":[
       {
@@ -30,7 +34,9 @@ function SendEmail ({sender,subject,body}){
       console.log(result.body)
     })
     .catch((err) => {
-      console.log(err.statusCode)
+      console.dir
+      
+      (err)
     })
 }
 

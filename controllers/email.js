@@ -4,7 +4,7 @@ const emailHandler = require("../utils/email")
 //create the router function
 const emailRouter = require("express").Router()
 
-email.post("/",async (request,response) => {
+emailRouter.post("/",async (request,response) => {
     //grabs the sender,subject,body.
     const {sender,subject,body}=request.body
 
